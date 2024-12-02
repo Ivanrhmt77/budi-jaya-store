@@ -1,0 +1,22 @@
+.button {
+  padding: 10px 32px;
+  outline: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.primary {
+  background-color: #000;
+  color: #fff;
+  border: #000 1px solid;
+}
+
+.secondary {
+  background-color: #fff;
+  color: #000;
+  border: #000 1px solid;
+}

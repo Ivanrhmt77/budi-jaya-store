@@ -14,29 +14,12 @@
     margin-bottom: 10px;
   }
   &__form {
-    width: 30%;
+    width: 350px;
     padding: 20px;
     box-shadow: 0 0 3px 0 rgba(0, 0, 0, 0.5);
     margin-bottom: 20px;
-    &__item {
-      display: flex;
-      flex-direction: column;
-      margin: 20px 0;
-      &__input {
-        padding: 10px;
-        background-color: #eee;
-        margin-top: 5px;
-        border: none;
-        outline: none;
-      }
-    }
     &__button {
-      padding: 10px;
-      background-color: #000;
-      color: #fff;
       width: 100%;
-      border: none;
-      outline: none;
     }
   }
   &__link {
