@@ -2,11 +2,12 @@
   background-color: #000;
   color: #fff;
   padding: 20px;
-  width: 300px;
+  width: 275px;
   height: 100vh;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  position: fixed;
   &__top {
     &__title {
       margin-bottom: 40px;
