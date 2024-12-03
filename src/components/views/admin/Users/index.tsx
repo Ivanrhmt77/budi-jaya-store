@@ -1,21 +1,22 @@
 import AdminLayout from "@/components/layouts/AdminLayout";
 import Button from "@/components/ui/Button";
-import { useEffect, useState } from "react";
+import { Dispatch, SetStateAction, useEffect, useState } from "react";
 import ModalUpdateUser from "./ModalUpdateUser";
 import styles from "./Users.module.scss";
 import userServices from "@/services/user";
 import ModalDeleteUser from "./ModalDeleteUser";
+import { User } from "@/types/user.type";
 
 type PropTypes = {
-  users: any;
-  setToaster: any;
+  users: User[];
+  setToaster: Dispatch<SetStateAction<{}>>;
 };
 
 const UsersAdminView = (props: PropTypes) => {
   const { users, setToaster } = props;
-  const [updatedUser, setUpdatedUser] = useState<any>({});
-  const [deletedUser, setDeletedUser] = useState<any>({});
-  const [usersData, setUsersData] = useState([]);
+  const [updatedUser, setUpdatedUser] = useState<User | {}>({});
+  const [deletedUser, setDeletedUser] = useState<User | {}>({});
+  const [usersData, setUsersData] = useState<User[]>([]);
 
   useEffect(() => {
     setUsersData(users);
@@ -38,7 +39,7 @@ const UsersAdminView = (props: PropTypes) => {
               </tr>
             </thead>
             <tbody>
-              {usersData.map((user: any, index: number) => (
+              {usersData.map((user: User, index: number) => (
                 <tr key={user.id}>
                   <td>{index + 1}</td>
                   <td>{user.fullname}</td>

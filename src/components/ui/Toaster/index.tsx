@@ -1,10 +1,17 @@
-import { use, useEffect, useRef, useState } from "react";
+import {
+  Dispatch,
+  SetStateAction,
+  use,
+  useEffect,
+  useRef,
+  useState,
+} from "react";
 import styles from "./Toaster.module.scss";
 
 type Proptypes = {
   variant?: string;
   message?: string;
-  setToaster: any;
+  setToaster: Dispatch<SetStateAction<{}>>;
 };
 
 const toasterVariants: any = {
