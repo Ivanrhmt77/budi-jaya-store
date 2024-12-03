@@ -23,6 +23,9 @@
     &__action {
       display: flex;
       gap: 10px;
+      i {
+        font-size: 20px;
+      }
     }
   }
 }
