@@ -5,6 +5,7 @@ import Button from "@/components/ui/Button";
 import { signOut } from "next-auth/react";
 
 type Proptypes = {
+  title: string;
   lists: Array<{
     title: string;
     url: string;
@@ -13,12 +14,12 @@ type Proptypes = {
 };
 
 const Sidebar = (props: Proptypes) => {
-  const { lists } = props;
+  const { title, lists } = props;
   const { pathname } = useRouter();
   return (
     <div className={styles.sidebar}>
       <div className={styles.sidebar__top}>
-        <h1 className={styles.sidebar__top__title}>Budi Jaya Store (Admin)</h1>
+        <h1 className={styles.sidebar__top__title}>{title}</h1>
         <div className={styles.sidebar__top__lists}>
           {lists.map((list, index) => (
             <Link

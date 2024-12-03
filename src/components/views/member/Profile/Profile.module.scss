@@ -1,0 +1,29 @@
+.profile {
+  &__title {
+    font-size: 32px;
+  }
+  &__main {
+    display: flex;
+    gap: 40px;
+    margin-top: 40px;
+    &__avatar {
+      width: 25%;
+      min-height: 300px;
+      box-shadow: 0 0 3px 0 rgba(0, 0, 0, 0.5);
+      border-radius: 8px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      &__image {
+        border-radius: 50%;
+      }
+    }
+    &__detail {
+      width: 75%;
+      min-height: 300px;
+      box-shadow: 0 0 3px 0 rgba(0, 0, 0, 0.5);
+      padding: 40px;
+      border-radius: 8px;
+    }
+  }
+}
