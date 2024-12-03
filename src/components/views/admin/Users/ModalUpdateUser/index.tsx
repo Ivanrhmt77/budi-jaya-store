@@ -7,7 +7,7 @@ import { useSession } from "next-auth/react";
 import { FormEvent, useState } from "react";
 
 const ModalUpdateUser = (props: any) => {
-  const { updatedUser, setUpdatedUser, setUsersData } = props;
+  const { updatedUser, setUpdatedUser, setUsersData, setToaster } = props;
   const session: any = useSession();
   const [isLoading, setIsLoading] = useState(false);
   const handleUpdateUser = async (event: FormEvent<HTMLFormElement>) => {
@@ -29,8 +29,10 @@ const ModalUpdateUser = (props: any) => {
       setUpdatedUser({});
       const { data } = await userServices.getAllUsers();
       setUsersData(data.data);
+      setToaster({ variant: "success", message: "User updated successfully" });
     } else {
       setIsLoading(false);
+      setToaster({ variant: "danger", message: "Failed updating user" });
     }
   };
 
