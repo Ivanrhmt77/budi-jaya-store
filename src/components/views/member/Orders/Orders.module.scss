@@ -1,0 +1,45 @@
+.orders {
+  &__title {
+    font-size: 32px;
+    font-weight: 700;
+  }
+  &__main {
+    margin-top: 40px;
+    display: grid;
+    gap: 20px;
+    row-gap: 60px;
+    grid-template-columns: repeat(3, 1fr);
+    @media screen {
+      @media (max-width: 1000px) {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+    &__item {
+      &__image {
+        width: 100%;
+        aspect-ratio: 1/1;
+        height: auto;
+        border: 10px;
+      }
+      &__title {
+        font-size: 18px;
+        font-weight: 600;
+        margin-top: 10px;
+      }
+      &__detail {
+        margin-top: 5px;
+        display: flex;
+        justify-content: space-between;
+        &__side {
+          display: flex;
+          flex-direction: column;
+          gap: 5px;
+        }
+      }
+      &__button {
+        margin-top: 10px;
+        width: 100%;
+      }
+    }
+  }
+}

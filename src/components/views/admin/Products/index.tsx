@@ -5,6 +5,7 @@ import styles from "./Products.module.scss";
 import Image from "next/image";
 import { convertIDR } from "@/utils/currency";
 import { Product } from "@/types/product.type";
+import ModalAddProduct from "./ModalAddProduct";
 
 type PropTypes = {
   products: Product[];
@@ -14,6 +15,7 @@ type PropTypes = {
 const ProductsAdminView = (props: PropTypes) => {
   const { products, setToaster } = props;
   const [productsData, setProductsData] = useState<Product[]>([]);
+  const [modalAddProduct, setModalAddProduct] = useState(false);
 
   useEffect(() => {
     setProductsData(products);
@@ -24,6 +26,13 @@ const ProductsAdminView = (props: PropTypes) => {
       <AdminLayout>
         <div className={styles.products}>
           <h1>Product Management</h1>
+          <Button
+            type="button"
+            className={styles.products__add}
+            onClick={() => setModalAddProduct(true)}
+          >
+            + Add Product
+          </Button>
           <table className={styles.products__table}>
             <thead>
               <tr>
@@ -34,7 +43,6 @@ const ProductsAdminView = (props: PropTypes) => {
                 <th>Type</th>
                 <th>Price</th>
                 <th>Stock</th>
-                <th>Action</th>
               </tr>
             </thead>
             <tbody>
@@ -54,26 +62,19 @@ const ProductsAdminView = (props: PropTypes) => {
                   <td>{product.typeName}</td>
                   <td>{convertIDR(product.price)}</td>
                   <td>{product.stock}</td>
-                  <td>
-                    <div className={styles.products__table__action}>
-                      <Button
-                        type="button"
-                        variant="info"
-                        className={styles.products__table__action__edit}
-                      >
-                        <i className="bx bxs-edit" />
-                      </Button>
-                      <Button type="button" variant="danger">
-                        <i className="bx bxs-trash-alt" />
-                      </Button>
-                    </div>
-                  </td>
                 </tr>
               ))}
             </tbody>
           </table>
         </div>
       </AdminLayout>
+      {modalAddProduct && (
+        <ModalAddProduct
+          setModalAddProduct={setModalAddProduct}
+          setToaster={setToaster}
+          setProductsData={setProductsData}
+        />
+      )}
     </>
   );
 };

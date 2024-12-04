@@ -23,6 +23,7 @@ const Input = (props: Proptypes) => {
           className={styles.container__input}
           defaultValue={defaultValue}
           disabled={disabled}
+          required
         />
       </div>
     </>

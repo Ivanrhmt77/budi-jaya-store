@@ -1,6 +1,10 @@
 .products {
-  &__table {
+  &__add {
     margin-top: 40px;
+    padding: 15px 20px;
+  }
+  &__table {
+    margin-top: 20px;
     width: 100%;
     border-spacing: 0;
     border-collapse: collapse;
