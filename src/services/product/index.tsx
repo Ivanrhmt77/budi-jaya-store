@@ -8,6 +8,18 @@ export const productServices = {
         Authorization: `Bearer ${token}`,
       },
     }),
+  updateProduct: (id: string, data: any, token: string) =>
+    instance.put(`/api/product/${id}`, data, {
+      headers: {
+        Authorization: `Bearer ${token}`,
+      },
+    }),
+  deleteProduct: (id: string, token: string) =>
+    instance.delete(`/api/product/${id}`, {
+      headers: {
+        Authorization: `Bearer ${token}`,
+      },
+    }),
 };
 
 export default productServices;

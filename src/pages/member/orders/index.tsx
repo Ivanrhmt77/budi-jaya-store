@@ -2,7 +2,7 @@ import OrdersMemberView from "@/components/views/member/Orders";
 import productServices from "@/services/product";
 import { useState, useEffect } from "react";
 
-const OrdersPage = () => {
+const OrdersPage = ({ setToaster }: any) => {
   const [products, setProducts] = useState([]);
   const [categories, setCategories] = useState([]);
   const [types, setTypes] = useState([]);
@@ -30,7 +30,7 @@ const OrdersPage = () => {
   }, []);
   return (
     <>
-      <OrdersMemberView products={products} />
+      <OrdersMemberView setToaster={setToaster} products={products} />
     </>
   );
 };
